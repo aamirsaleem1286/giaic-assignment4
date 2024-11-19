@@ -1,23 +1,26 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
 const Footer = () => {
   return (
     <div>
       <footer className="bg-[#F0F0F0] text-[#00000099] py-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
+          {/* Grid Layout for Footer */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            {/* First Column: Logo and Description */}
             <div className="flex flex-col items-start mb-8">
-              <Image src={"/images/footlogo.png"} alt="image" width={100} height={100} />
+              <Image src={"/images/logo.png"} alt="image" width={100} height={100} />
               <p className="text-[#00000099] my-8 max-w-md">
                 We have clothes that suits your style and which you’re proud to wear. From women to men.
               </p>
               <Image src={"/images/SocialIcon.png"} alt="image" width={200} height={150} />
             </div>
 
+            {/* Company Section */}
             <div>
-              <h2 className="text-2xl text-[#00000099] font-bold  mb-4">Company</h2>
-              <ul className="text-[#00000099] space-y-2">
+              <h2 className="text-2xl text-[#00000099] font-bold mb-4">Company</h2>
+              <ul className="space-y-2">
                 <li><a href="#" className="hover:text-white">About</a></li>
                 <li><a href="#" className="hover:text-white">Features</a></li>
                 <li><a href="#" className="hover:text-white">Works</a></li>
@@ -25,9 +28,10 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Help Section */}
             <div>
               <h2 className="text-2xl text-[#00000099] font-bold mb-4">Help</h2>
-              <ul className="text-[#00000099] space-y-2">
+              <ul className="space-y-2">
                 <li><a href="#" className="hover:text-white">Customer Support</a></li>
                 <li><a href="#" className="hover:text-white">Delivery Details</a></li>
                 <li><a href="#" className="hover:text-white">Terms & Conditions</a></li>
@@ -35,9 +39,10 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* FAQ Section */}
             <div>
               <h2 className="text-2xl text-[#00000099] font-bold mb-4">FAQ</h2>
-              <ul className="text-[#00000099] space-y-2">
+              <ul className="space-y-2">
                 <li><a href="#" className="hover:text-white">Account</a></li>
                 <li><a href="#" className="hover:text-white">Manage Deliveries</a></li>
                 <li><a href="#" className="hover:text-white">Orders</a></li>
@@ -45,9 +50,10 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Resources Section */}
             <div>
               <h2 className="text-2xl text-[#00000099] font-bold mb-4">Resources</h2>
-              <ul className="text-[#00000099] space-y-2">
+              <ul className="space-y-2">
                 <li><a href="#" className="hover:text-white">Free eBooks</a></li>
                 <li><a href="#" className="hover:text-white">Development Tutorial</a></li>
                 <li><a href="#" className="hover:text-white">How to - Blog</a></li>
@@ -56,13 +62,14 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="border-t border-[#0000001A] mt-10 pt-6  text-gray-400">
-             Shop.co © 2000-2023, All Rights Reserved
+          {/* Footer Bottom */}
+          <div className="border-t border-[#0000001A] mt-10 pt-6 text-center text-gray-400">
+            Shop.co © 2000-2023, All Rights Reserved
           </div>
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

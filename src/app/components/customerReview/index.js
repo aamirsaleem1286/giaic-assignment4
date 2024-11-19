@@ -1,50 +1,96 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from 'next/image';
+import React from 'react';
 
-const CustomerReview = () => {
-    const reviewData=[{
-        name:"Sarah M.",
-        star:4,
-        para:"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
-        src:"/images/correctImage.png",
-        starImage:"/images/stars.png"
-  
+const HeroSection = () => {
+  const arrivalData = [
+    {
+      src: "/images/arrival1.png",
+      heading: "T-SHIRT WITH TAPE DETAILS",
+      star: 4,
+      price: "$120"
     },
-      {
-          name:"Alex K.",
-          star:4,
-          para:"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
-          src:"/images/correctImage.png",
-          starImage:"/images/stars.png"
+    {
+      src: "/images/arrival2.png",
+      heading: "SKINNY FIT JEANS",
+      star: 4,
+      price: "$240"
+    },
+    {
+      src: "/images/arrival3.png",
+      heading: "CHECKERED SHIRT",
+      star: 4,
+      price: "$180"
+    },
+    {
+      src: "/images/arrival4.png",
+      heading: "SLEEVE STRIPED T-SHIRT",
+      star: 4,
+      price: "$130"
+    },
+  ];
 
-        },
-        {
-          name:"James L.",
-          star:4,
-          para:"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
-          src:"/images/correctImage.png",
-          starImage:"/images/stars.png"
-        }
-      ]
+  const topSellingData = [
+    {
+      src: "/images/arrival5.png",
+      heading: "VERTICAL STRIPED SHIRT",
+      star: 4,
+      price: "$212"
+    },
+    {
+      src: "/images/arrival6.png",
+      heading: "COURAGE GRAPHIC T-SHIRT",
+      star: 4,
+      price: "$145"
+    },
+    {
+      src: "/images/arrival7.png",
+      heading: "LOOSE FIT BERMUDA SHORTS",
+      star: 4,
+      price: "$80"
+    },
+    {
+      src: "/images/arrival8.png",
+      heading: "FADED SKINNY JEANS",
+      star: 4,
+      price: "$210"
+    },
+  ];
 
-    return (
+  return (
     <div>
-    <h1 className=' my-16 mx-12 text-4xl font-extrabold'>OUR HAPPY CUSTOMERS</h1>
-    <div className='flex justify-around ' >
-    {reviewData.map((item,index)=>{
-    return(
-    <div key={index} className=' border border-color-[#0000001A] w-[400px] h-[320px] gap-12 p-12 rounded-lg' >
-    <Image src={item.starImage} alt="img" width={200} height={200}/>
-    <div className='flex items-center gap-6 mt-4'>
-    <h1 className=' font-extrabold text-xl'>{item.name}</h1>
-    <Image src={item.src} alt="img" width={25} height={30}/>
-    </div>
-    <p className='text-[#00000099]'>{item.para}</p>
-    </div>
-       )})}
-    </div>
-    </div>
-  )
-}
+      {/* New Arrivals Section */}
+      <h1 className='text-center my-12 text-2xl font-extrabold'>NEW ARRIVALS</h1>
+      <div className="px-4">
+        <div className='flex flex-wrap justify-center gap-8'>
+          {arrivalData.map((item, index) => {
+            return (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/4 text-center">
+                <Image src={item.src} alt="img" width={280} height={270} layout="responsive" />
+                <h1 className='font-extrabold mt-4'>{item.heading}</h1>
+                <h1 className='text-xl font-extrabold'>{item.price}</h1>
+              </div>
+            );
+          })}
+        </div>
+      </div>
 
-export default CustomerReview
+      {/* Top Selling Section */}
+      <h1 className='text-center my-12 text-2xl font-extrabold'>Top Selling</h1>
+      <div className="px-4">
+        <div className='flex flex-wrap justify-center gap-8'>
+          {topSellingData.map((item, index) => {
+            return (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/4 text-center">
+                <Image src={item.src} alt="img" width={280} height={270} layout="responsive" />
+                <h1 className='font-extrabold mt-4'>{item.heading}</h1>
+                <h1 className='text-xl font-extrabold'>{item.price}</h1>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
